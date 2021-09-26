@@ -1,5 +1,5 @@
 {
-  "extends": "solhint:recommended",
+  "extends": ["solhint:recommended", "prettier"],
     "rules": {
       "prettier/prettier": "error",
       "avoid-throw": "off",

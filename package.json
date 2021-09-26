@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "solhint": "./node_modules/.bin/solhint -f table contracts/**/*.sol",
+    "lint:ts": "eslint test --ext .ts",
+    "lint:ts:fix": "eslint test --quiet --fix",
+    "lint:solhint": "./node_modules/.bin/solhint -f table contracts/**/*.sol",
     "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol"
   },
   "keywords": [],
@@ -19,8 +21,13 @@
     "@typechain/hardhat": "^2.3.0",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.9.6",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
     "chai": "^4.3.4",
     "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.4.7",
     "hardhat": "^2.6.4",
@@ -37,7 +44,7 @@
   "dependencies": {},
   "husky": {
     "hooks": {
-       "pre-push": "npm run prettier:solidity"
+      "pre-push": "npm run prettier:solidity"
     }
   }
 }
